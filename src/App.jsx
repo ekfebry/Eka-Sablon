@@ -19,7 +19,7 @@ const MenuBawah = () => {
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" color={color} size={40} />
+            <Icon name="home" color={color} size={38} />
           ),
         }}
       />
@@ -29,7 +29,7 @@ const MenuBawah = () => {
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({color, size}) => (
-            <Icon name="shopping" color={color} size={40} />
+            <Icon name="shopping" color={color} size={38} />
           ),
         }}
       />
@@ -39,7 +39,7 @@ const MenuBawah = () => {
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({color, size}) => (
-            <Icon name="information" color={color} size={40} />
+            <Icon name="information" color={color} size={38} />
           ),
         }}
       />
