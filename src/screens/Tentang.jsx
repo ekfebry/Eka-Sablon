@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Linking} from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, Linking } from 'react-native';
+import Img1 from '../assets/image/Eka_Sablon.png';
 
 const About = () => {
   const handlePress = async () => {
-    // Ganti URL ini dengan URL WhatsApp atau website Anda
     const url = 'https://wa.me/6281939776637';
     const supported = await Linking.canOpenURL(url);
 
@@ -15,19 +15,10 @@ const About = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Eka_Sablon</Text>
-        <Text style={styles.description}>
-          Kami adalah spesialis sablon berkualitas tinggi dengan pengalaman lebih dari 10 tahun.
-          Kami menawarkan berbagai layanan sablon untuk kaos, topi, tas, dan banyak lagi.
-        </Text>
-        <Text style={styles.instruction}>
-          Untuk informasi lebih lanjut, silakan hubungi kami melalui WhatsApp:
-        </Text>
-      </View>
+    <View>
+      <Image source={Img1} style={{ width: 400, height: 730 }} />
       <TouchableOpacity style={styles.button} onPress={handlePress}>
-        <Text style={styles.buttonText}>Hubungi Kami di WhatsApp</Text>
+        <Text style={styles.buttonText}>Hubungi Kami via WhatsApp</Text>
       </TouchableOpacity>
     </View>
   );
@@ -36,45 +27,23 @@ const About = () => {
 export default About;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    padding: 20,
-    backgroundColor: '#f8f8f8',
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#333',
-    marginBottom: 20,
-  },
-  description: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#666',
-    marginBottom: 20,
-    lineHeight: 24,
-  },
-  instruction: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#333',
-    marginBottom: 20,
-  },
   button: {
     backgroundColor: '#25D366', // Warna WhatsApp
     paddingVertical: 15,
     borderRadius: 8,
+    marginVertical: 20,
+    marginHorizontal: 40,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   buttonText: {
     color: 'white',
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
+    paddingVertical: 10,
   },
 });
