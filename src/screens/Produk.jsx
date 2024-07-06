@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView} from 'react-native';
+import { Image, StyleSheet, Text, View, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
 import IkonMenu from '../component/IkonMenu';
 import Img2 from '../assets/image/kaos.jpg';
 import Img3 from '../assets/image/sweater.jpeg';
@@ -12,36 +12,21 @@ const Produk = ({ navigation }) => {
       image: Img2,
       name: 'Sablon Kaos',
       description: 'Kaos berkualitas tinggi dengan sablon custom sesuai keinginan Anda. Tersedia berbagai ukuran dan warna.',
-      price: 150000,
-      features: [
-        { icon: '✨', text: 'Kualitas Premium' },
-        { icon: '', text: 'Desain Custom' },
-        { icon: '', text: 'Berbagai Ukuran' },
-      ],
+      price: 70000,
     },
     {
       id: 2,
       image: Img3,
-      name: 'Topi Custom',
-      description: 'Topi keren dengan desain custom sesuai keinginan Anda. Cocok untuk berbagai gaya.',
-      price: 100000,
-      features: [
-        { icon: '', text: 'Bahan Berkualitas' },
-        { icon: '', text: 'Desain Custom' },
-        { icon: '☀️', text: 'Melindungi dari Matahari' },
-      ],
+      name: 'Sweater',
+      description: 'Sweater keren dengan desain custom sesuai keinginan Anda. Cocok untuk berbagai gaya.',
+      price: 150000,
     },
     {
       id: 3,
       image: Img4,
       name: 'Tas Totebag',
       description: 'Tas totebag serbaguna dengan desain custom sesuai keinginan Anda. Kapasitas besar dan ramah lingkungan.',
-      price: 120000,
-      features: [
-        { icon: '', text: 'Jahitan Kuat' },
-        { icon: '', text: 'Desain Custom' },
-        { icon: '♻️', text: 'Ramah Lingkungan' },
-      ],
+      price: 50000,
     },
   ];
 
@@ -56,28 +41,13 @@ const Produk = ({ navigation }) => {
               <Text style={styles.produk}>{product.name}</Text>
               <Text style={styles.description}>{product.description}</Text>
               <Text style={styles.price}>Rp {product.price}</Text>
-              <View style={styles.features}>
-                {product.features.map((feature) => (
-                  <Feature key={feature.icon} icon={feature.icon} text={feature.text} />
-                ))}
-              </View>
             </View>
           </View>
         ))}
       </ScrollView>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Design')}>
-        <Text style={styles.buttonText}>Lihat Produk Lainnya</Text>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 };
-
-const Feature = ({ icon, text }) => (
-  <View style={styles.featureItem}>
-    <Text style={styles.featureIcon}>{icon}</Text>
-    <Text style={styles.featureText}>{text}</Text>
-  </View>
-);
 
 export default Produk;
 
@@ -106,5 +76,24 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
-  }},
-)
+  },
+  produk: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  description: {
+    fontSize: 15,
+    color: 'white',
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  buttonText: {
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',
+  },
+});
