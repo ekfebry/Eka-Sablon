@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-native/no-inline-styles */
+
 import {Image, StyleSheet, View} from 'react-native';
 import React from 'react';
 import IkonMenu from '../component/IkonMenu';

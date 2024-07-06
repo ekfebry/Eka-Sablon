@@ -1,28 +1,18 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, Text, StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Beranda from './screens/Beranda';
+import Produk from './screens/Produk';
+import Tentang from './screens/Tentang';
 
-// Komponen layar
-const Beranda = () => (
-  <View style={styles.screen}>
-    <Text style={styles.text}>Selamat datang di Beranda</Text>
-  </View>
-);
-
-const Produk = () => (
-  <View style={styles.screen}>
-    <Text style={styles.text}>Daftar Produk</Text>
-  </View>
-);
-
-const Tentang = () => (
-  <View style={styles.screen}>
-    <Text style={styles.text}>Tentang Kami</Text>
-  </View>
-);
+const COLORS = {
+  primary: '#3498db',
+  background: '#f8f9fa',
+  text: '#2c3e50',
+  inactive: 'gray',
+};
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,8 +20,8 @@ const Tab = createBottomTabNavigator();
 const MenuBawah = () => {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
           if (route.name === 'Beranda') {
@@ -44,10 +34,10 @@ const MenuBawah = () => {
 
           return <Icon name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#3498db',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: COLORS.primary,
+        tabBarInactiveTintColor: COLORS.inactive,
         tabBarStyle: {
-          backgroundColor: '#f8f9fa',
+          backgroundColor: COLORS.background,
           borderTopWidth: 0,
           elevation: 10,
           shadowOpacity: 0.1,
@@ -58,13 +48,14 @@ const MenuBawah = () => {
           fontWeight: 'bold',
         },
         headerStyle: {
-          backgroundColor: '#3498db',
+          backgroundColor: COLORS.primary,
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-      })}>
+      })}
+    >
       <Tab.Screen name="Beranda" component={Beranda} />
       <Tab.Screen name="Produk" component={Produk} />
       <Tab.Screen name="Tentang" component={Tentang} />
@@ -79,25 +70,11 @@ const App = () => {
         <Stack.Screen
           name="Main"
           component={MenuBawah}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ecf0f1',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#2c3e50',
-  },
-});
 
 export default App;
