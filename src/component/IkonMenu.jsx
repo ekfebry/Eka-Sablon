@@ -1,13 +1,11 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
 const IkonMenu = () => {
   return (
-    <TouchableOpacity>
-      <View>
-        <Text style={styles.menu}>Selamat Datang di Produk Eka Sablon</Text>
-      </View>
-    </TouchableOpacity>
+    <View>
+      <Text style={styles.menu}>Berikut Beberapa Contoh Produk Eka Sablon </Text>
+    </View>
   );
 };
 
@@ -20,5 +18,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     textAlign: 'center',
     marginBottom: 10,
+    color: 'black',
   },
 });
