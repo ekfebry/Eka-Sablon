@@ -56,9 +56,9 @@ const MenuBawah = () => {
         },
       })}
     >
-      <Tab.Screen name="Beranda" component={Beranda} />
-      <Tab.Screen name="Produk" component={Produk} />
-      <Tab.Screen name="Tentang" component={Tentang} />
+      <Tab.Screen name="Beranda" component={Beranda} options={{headerShown: false}}/>
+      <Tab.Screen name="Produk" component={Produk} options={{headerShown: false}}/>
+      <Tab.Screen name="Tentang" component={Tentang} options={{headerShown: false}}/>
     </Tab.Navigator>
   );
 };

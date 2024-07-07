@@ -5,7 +5,7 @@ import Img1 from '../assets/image/Eka_.png';
 const About = () => {
   return (
     <View>
-      <Image source={Img1} style={{ width: 400, height: 730 }} />
+      <Image source={Img1} style={{ width: 400, height: 780 }} />
     </View>
   );
 };
