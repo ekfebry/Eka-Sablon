@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import Img1 from '../assets/image/Eka_.png';
+import Img1 from '../assets/image/tentangkami.png';
 
 const About = () => {
   return (
